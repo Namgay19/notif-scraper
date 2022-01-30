@@ -1,9 +1,13 @@
 from configparser import ConfigParser
+import pathlib
 
-def config(filename='database.ini', section='postgresql'):
+def config(section='postgresql'):
     # create a parser
     parser = ConfigParser()
+    
     # read config file
+    dir = str(pathlib.Path().resolve())
+    filename = dir + "/database.ini"
     parser.read(filename)
 
     # get section, default to postgresql

@@ -6,7 +6,7 @@ def config(section='postgresql'):
     parser = ConfigParser()
     
     # read config file
-    dir = str(pathlib.Path().resolve())
+    dir = str(pathlib.Path(__file__).parent.resolve())
     filename = dir + "/database.ini"
     parser.read(filename)
 
